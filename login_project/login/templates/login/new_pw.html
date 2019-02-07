@@ -1,0 +1,19 @@
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+    <link href="{% static 'login/login_style.css' %}" type='text/css' rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+
+</head>
+    <body>
+        <div class="login-form">
+        <form method="POST" style="margin-bottom: 0px;">
+        {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="login-button">제출</button>
+    </form>
+        </div>
+    </body>

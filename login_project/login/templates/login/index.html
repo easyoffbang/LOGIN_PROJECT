@@ -1,0 +1,28 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAIN</title>
+    <link href="{% static 'login/index.css' %}" type='text/css' rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+
+</head>
+<body>
+<div class="profile">
+{% if not user.username %}
+    <h2>비회원님 환영합니다.</h2>
+    <div class="a_tags">
+    <a href="{%  url 'login' %}">로그인</a>
+    <a href="{%  url 'signup' %}">회원가입</a>
+    </div>
+{% else %}
+    <h2>{{ user.username }}님 환영합니다.</h2>
+    <div class="a_tags">
+    <a href="{% url 'new_pw' %}">비밀번호 바꾸기</a>
+    <a href="{% url 'logout' %}">로그아웃</a>
+    </div>
+{% endif %}
+</div>
+</body>
+</html>

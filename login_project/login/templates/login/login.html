@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+    <link href="{% static 'login/login_style.css' %}" type='text/css' rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="login-form">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="로그인" class="login-button">
+        </form>
+
+        <div class="link">
+            <a href="#"> 비밀번호를 잊어버리셨나요?</a>
+        </div>
+    </div>
+
+
+</body>
+</html>
